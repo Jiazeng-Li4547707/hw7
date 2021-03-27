@@ -1,0 +1,39 @@
+---
+title: "hw"
+output: word_document
+---
+```{r}
+library(rvest)    
+library(dplyr)     
+library(tidyverse)     
+library(repurrrsive)
+```
+1)
+```{r}
+Link <- "https://www.imdb.com/list/ls091520106/"
+page = read_html(Link)
+Title = page%>% html_nodes(".lister-item-header a")%>%
+html_text()
+```
+2)
+&nbsp;
+
+(a)Nested lists are lists whose elements are lists.
+&nbsp;
+
+(b)
+```{r}
+gh_repos
+```
+
+(c)
+```{r}
+repos <- tibble(repo = gh_repos)
+repos
+```
+(d)
+```{r}
+listviewer::jsonedit(gh_repos)
+```
+(e)
+
